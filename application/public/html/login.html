@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width-device-width, initial-scale=1, 0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
         <link rel="stylesheet" href="../css/style.css">
     </head>
@@ -20,17 +20,14 @@
             </ul>
         </nav>
         <main>
-            <header>
-                <h2>Login Form</h2>
-            </header>
+            <h2>Login here to share content</h2>
             <form action="">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username" required>
 
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-<!--                <label>Agree to TOS</label>-->
-<!--                <input type="checkbox">-->
+                <input type="password" name="password" id="password" required>
+
                 <button type="submit">Login</button>
                 <button type="reset">Clear</button>
             </form>
