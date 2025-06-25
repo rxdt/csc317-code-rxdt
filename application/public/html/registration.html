@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width-device-width, initial-scale=1, 0">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
         <title>Register</title>
     </head>
     <body>
@@ -21,22 +21,32 @@
         </nav>
         <main>
             <header>
-                <h2>Login Form</h2>
+                <h2>Registration Form</h2>
             </header>
             <form action="">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username" required>
 
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" required>
 
-                <label>I am over 13 years old</label>
-                <input type="checkbox">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" name="confirm-password" id="confirm-password" required>
 
-                <label>I agree to the terms of service</label>
-                <input type="checkbox">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
 
-                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" name="age-confirm" required>
+                    I am over 13 years old
+                </label>
+
+                <label>
+                    <input type="checkbox" name="tos-confirmed" required>
+                    I agree to the <a href="#" target="_blank">TOS and Privacy Rules</a>
+                </label>
+
+                <button type="submit">Register</button>
                 <button type="reset">Clear</button>
             </form>
         </main>
