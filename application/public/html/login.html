@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" type="text/css" href="../css/index.css" />
+        <link rel="stylesheet" type="text/css" href="../css/login.css" />
         <title>Login</title>
-        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
-        <header>
+        <header class="fancy-heading">
             <h1>CSC 317 Video App</h1>
         </header>
         <nav>
@@ -21,14 +23,14 @@
         </nav>
         <main>
             <h2>Login here to share content</h2>
-            <form action="">
+            <form action="" id="login-form">
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" required>
 
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" required>
 
-                <button type="submit">Login</button>
+                <button id="submit" type="submit">Login</button>
                 <button type="reset">Clear</button>
             </form>
         </main>
