@@ -1,0 +1,18 @@
+body * {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.valid {
+    outline-color: green;
+    outline-style: double;
+}
+
+.invalid {
+    outline-color: red;
+    outline-style: double;
+}
+
+.d1 { /* class selector */
+    background-color: red;
+}
