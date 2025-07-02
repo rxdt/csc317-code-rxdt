@@ -4,40 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/viewpost.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/index.css" />
     <title>Watch Video</title>
 </head>
 <body>
-    <header>
-        <h1>CSC 317 Video App</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="registration.html">Register</a></li>
-            <li><a href="postvideo.html">Post</a></li>
-            <li><a href="viewpost.html">View Post</a></li>
-        </ul>
-    </nav>
+<header class="fancy-heading">
+    <h1>CSC 317 Video App</h1>
+    <h2 class="sub-heading">Watch original videos here</h2>
+</header>
 
-    <main>
-        <article>
-            <h2>Video Title Here</h2>
-            <p><b>Author:</b> John Smith</p>
-            <p><b>Posted On:</b> January 1, 2025</p>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="registration.html">Register</a></li>
+        <li><a href="postvideo.html">Post</a></li>
+        <li><a href="viewpost.html">View Post</a></li>
+    </ul>
+</nav>
 
-            <video width="640" height="360" controls>
-                <source src="test.mp4" type="video/mp4">
-            </video>
+<main class="video-gallery">
 
-            <section>
-                <h3>Comments</h3>
-                <p>Comment here</p>
-            </section>
-        </article>
-    </main>
-    <footer>
-        Roxana del Toro &copy; 2025
-    </footer>
+    <article class="video-card">
+        <h2>Video Title One</h2>
+        <p class="author">Author: John Smith</p>
+        <p class="date">Posted on: January 1, 2025</p>
+        <video controls>
+            <source src="test.mp4" type="video/mp4" />
+        </video>
+        <section class="comments">
+            <h3>Comments</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Great video! Thanks for sharing.</p>
+        </section>
+    </article>
+
+    <article class="video-card">
+        <h2>Video Title Two</h2>
+        <p class="author">Author: Jane Doe</p>
+        <p class="date">Posted on: February 15, 2025</p>
+        <video controls>
+            <source src="test.mp4" type="video/mp4" />
+        </video>
+        <section class="comments">
+            <h3>Comments</h3>
+            <p>Nice edit and music sync.</p>
+            <p>Could use a better thumbnail though!</p>
+        </section>
+    </article>
+
+    <article class="video-card">
+        <h2>Video Title Three</h2>
+        <p class="author">Author: JJ SS</p>
+        <p class="date">Posted on: March 10, 2025</p>
+        <video controls>
+            <source src="test.mp4" type="video/mp4" />
+        </video>
+        <section class="comments">
+            <h3>Comments</h3>
+            <p>Lorem ipsum dolor sit amet</p>
+        </section>
+    </article>
+
+    <article class="video-card">
+        <h2>Video Title Four</h2>
+        <p class="author">Author: Rox dT</p>
+        <p class="date">Posted on: March 10, 2025</p>
+        <video controls>
+            <source src="test.mp4" type="video/mp4" />
+        </video>
+        <section class="comments">
+            <h3>Comments</h3>
+            <p>Lorem ipsum dolor sit amet</p>
+        </section>
+    </article>
+
+</main>
+
+<footer>
+    Roxana del Toro &copy; 2025
+</footer>
 </body>
 </html>
