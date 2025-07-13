@@ -1,22 +1,3 @@
-// function fadeout() {
-//     // e.currentTarget.remove(); // remove on opacity fades
-//     let el = e.currentTarget;
-//     let cnt = 100;
-//     let t = setInterval() => {
-//         cnt -= 10;
-//         if(cnt < 10){
-//             clearInterval(t);
-//     },100);
-// }
-
-// function makeCardJs(product) {
-//     let root = document.createElement("div")};
-//     root.id = "container";
-//     root.classList.add("container");
-//     let imgTag = document.createElement("img");
-//     // etc...
-// }
-
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("container");
     const itemCount = document.getElementById("item-count");
@@ -61,16 +42,3 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 });
-
-// document.addEventListener("DOMContentLoaded", function() {});
-
-// window.location.reload(); // refresh the tab to the current value
-
-// document is the page aaka the website
-// document.getElementById(`password`); // grabs singular elements, only grabs the first one with this ID
-// document.querySelector(``); // use CSS selectors to trigger elements
-//
-// document.getElementsByTagName('body') // grabs collections of elements, all bodies
-// document.getElementsByClassName('input-text'); // returns list
-// document.getElementsByName('');
-// document.querySelectorAll(''); // use CSS selectors to trigger elements
