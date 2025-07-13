@@ -163,14 +163,18 @@ main p {
     color: darkgreen;
 }
 
-#pagination {
+#pagination,
+#pagination-top,
+#pagination-bottom {
     display: flex;
     justify-content: center;
     margin-top: 1em;
     gap: 0.5em;
 }
 
-#pagination button {
+#pagination button,
+#pagination-top button,
+#pagination-bottom button {
     padding: 0.5em 1em;
     border: none;
     background-color: #44bdbd;
@@ -181,11 +185,16 @@ main p {
     transition: background-color 0.3s ease;
 }
 
-#pagination button:hover {
+#pagination button:hover,
+#pagination-top button:hover,
+#pagination-bottom button:hover {
+
     background-color: #369f9f;
 }
 
-#pagination button:disabled {
+#pagination button:disabled,
+#pagination-top button:disabled,
+#pagination-bottom button:disabled {
     background-color: #ccc;
     cursor: default;
 }

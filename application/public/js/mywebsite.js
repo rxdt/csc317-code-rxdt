@@ -2,9 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("container");
     const itemCount = document.getElementById("item-count");
 
-    const paginationContainer = document.createElement("div");
-    paginationContainer.id = "pagination";
-    container.parentElement.appendChild(paginationContainer);
+    const paginationTop = document.createElement("div");
+    paginationTop.id = "pagination-top";
+    const paginationBottom = document.createElement("div");
+    paginationBottom.id = "pagination-bottom";
+    container.parentElement.insertBefore(paginationTop, container);
+    container.parentElement.appendChild(paginationBottom);
 
     let currentPage = 1;
     const itemsPerPage = 20;
@@ -56,20 +59,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function createPagination(totalItems) {
-        paginationContainer.innerHTML = "";
+        paginationTop.innerHTML = "";
+        paginationBottom.innerHTML = "";
         const totalPages = Math.ceil(totalItems/itemsPerPage);
         for (let i = 1; i <= totalPages; i++) {
-            const button = document.createElement("button");
-            button.textContent = i;
+            const buttonTop = document.createElement("button");
+            const buttonBottom = document.createElement("button");
+            buttonTop.textContent = i;
+            buttonBottom.textContent = i;
+
             if (i === currentPage) {
-                button.disabled = true;
+                buttonTop.disabled = true;
+                buttonBottom.disabled = true;
             }
-            button.addEventListener("click", () => {
+            buttonTop.addEventListener("click", () => {
                 currentPage = i;
                 renderPage(currentPage);
                 createPagination(products.length);
             });
-            paginationContainer.appendChild(button);
+            buttonBottom.addEventListener("click", () => {
+                currentPage = i;
+                renderPage(currentPage);
+                createPagination(products.length);
+            });
+            paginationTop.appendChild(buttonTop);
+            paginationBottom.appendChild(buttonBottom);
         }
     }
 
