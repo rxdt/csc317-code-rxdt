@@ -14,7 +14,6 @@ var loginForm = document.getElementById("login-form");
 if (usernameField) {
     usernameField.addEventListener("change", function(eventObject) {
         var username = eventObject.target.value;
-        // if (username.length >= 3) {
         if (isValidUser(username)) {
             console.log("username has more than 3 chars");
             usernameField.classList.remove("invalid");
