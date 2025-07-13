@@ -1,39 +1,3 @@
-function isValidUser(username) {
-    return username.length >= 3;
-}
-
-/**
- * @param {str} password
- * @returns boolean
- */
-function isValidPassword(password) {}
-
-var usernameField = document.getElementById("username");
-var loginForm = document.getElementById("login-form");
-// document.forms[0] // loop through forms
-if (usernameField) {
-    usernameField.addEventListener("change", function(eventObject) {
-        var username = eventObject.target.value;
-        if (isValidUser(username)) {
-            console.log("username has more than 3 chars");
-            usernameField.classList.remove("invalid");
-            usernameField.classList.add("valid");
-        } else {
-            usernameField.classList.remove("valid");
-            usernameField.classList.add("invalid");
-            document.getElementById("submit").setAttribute("disabled", true);
-        }
-    })
-}
-
-loginForm.addEventListener("submit", function(eventObject) {
-    console.log(eventObject);
-    e.preventDefault();
-    if(isValidUser() && isValidPassword()) {
-        loginForm.submit(); // ensure can't submit a bad form
-    }
-})
-
 // function fadeout() {
 //     // e.currentTarget.remove(); // remove on opacity fades
 //     let el = e.currentTarget;
