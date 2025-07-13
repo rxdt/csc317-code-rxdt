@@ -162,3 +162,30 @@ main p {
 .item-price {
     color: darkgreen;
 }
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    gap: 0.5em;
+}
+
+#pagination button {
+    padding: 0.5em 1em;
+    border: none;
+    background-color: #44bdbd;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#pagination button:hover {
+    background-color: #369f9f;
+}
+
+#pagination button:disabled {
+    background-color: #ccc;
+    cursor: default;
+}

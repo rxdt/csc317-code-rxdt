@@ -2,43 +2,82 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("container");
     const itemCount = document.getElementById("item-count");
 
+    const paginationContainer = document.createElement("div");
+    paginationContainer.id = "pagination";
+    container.parentElement.appendChild(paginationContainer);
+
+    let currentPage = 1;
+    const itemsPerPage = 20;
+    let products = [];
+
+    function renderPage(page) {
+        container.innerHTML = "";
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pageItems = products.slice(start, end);
+        pageItems.forEach((product) => {
+            const card = document.createElement("div");
+            card.className = "product-card";
+
+            const img = document.createElement("img");
+            img.className = "item-img";
+            img.src = product.thumbnail;
+            img.alt = product.title;
+
+            const title = document.createElement("p");
+            title.className = "item-title";
+            title.textContent = product.title;
+
+            const price = document.createElement("p");
+            price.className = "item-price";
+            price.textContent = `$${product.price}`;
+
+            card.appendChild(img);
+            card.appendChild(title);
+            card.appendChild(price);
+            container.appendChild(card);
+
+            card.addEventListener("click", () => {
+                card.style.transition = "opacity 0.8s";
+                card.style.opacity = "0";
+                setTimeout(() => {
+                    card.remove();
+                    const currentCount = parseInt(itemCount.textContent.match(/\d+/)[0], 10);
+                    itemCount.textContent = `Number of results: ${currentCount - 1}`;
+                }, 800);
+            });
+        });
+        updateCount();
+    }
+
+    function updateCount() {
+        const visible = container.getElementsByClassName("product-card").length;
+        itemCount.textContent = `results: ${visible}`;
+    }
+
+    function createPagination(totalItems) {
+        paginationContainer.innerHTML = "";
+        const totalPages = Math.ceil(totalItems/itemsPerPage);
+        for (let i = 1; i <= totalPages; i++) {
+            const button = document.createElement("button");
+            button.textContent = i;
+            if (i === currentPage) {
+                button.disabled = true;
+            }
+            button.addEventListener("click", () => {
+                currentPage = i;
+                renderPage(currentPage);
+                createPagination(products.length);
+            });
+            paginationContainer.appendChild(button);
+        }
+    }
+
     fetch("https://dummyjson.com/products?limit=50")
         .then((res) => res.json())
         .then((data) => {
-            let products = data.products;
-            itemCount.textContent = `Number of results: ${products.length}`;
-
-            products.forEach((product) => {
-                const card = document.createElement("div");
-                card.className = "product-card";
-
-                const img = document.createElement("img");
-                img.className = "item-img";
-                img.src = product.thumbnail;
-                img.alt = product.title;
-
-                const title = document.createElement("p");
-                title.className = "item-title";
-                title.textContent = product.title;
-
-                const price = document.createElement("p");
-                price.className = "item-price";
-                price.textContent = `$${product.price}`;
-
-                card.appendChild(img);
-                card.appendChild(title);
-                card.appendChild(price);
-                container.appendChild(card);
-
-                card.addEventListener("click", () => {
-                    card.style.transition = "opacity 0.8s";
-                    card.style.opacity = "0";
-                    setTimeout(() => {
-                        card.remove();
-                        const currentCount = parseInt(itemCount.textContent.match(/\d+/)[0], 10);
-                        itemCount.textContent = `Number of results: ${currentCount - 1}`;
-                    }, 800);
-                });
-            });
+            products = data.products;
+            createPagination(products.length);
+            renderPage(currentPage);
         });
 });
