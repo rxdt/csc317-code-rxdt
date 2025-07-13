@@ -1,10 +1,6 @@
 function isValidUser(username) {
     return username.length >= 3;
 }
-console.log("say stuff");
-function isValidUser(username) {
-    console.log("say stuff");
-}
 
 /**
  * @param {str} password
@@ -39,55 +35,70 @@ loginForm.addEventListener("submit", function(eventObject) {
     }
 })
 
-function fadeout() {
-    // e.currentTarget.remove(); // remove on opacity fades
-    let el = e.currentTarget;
-    let cnt = 100;
-    let t = setInterval() => {
-        cnt -= 10;
-        if(cnt < 10){
-            clearInterval(t);
-    },100);
-}
+// function fadeout() {
+//     // e.currentTarget.remove(); // remove on opacity fades
+//     let el = e.currentTarget;
+//     let cnt = 100;
+//     let t = setInterval() => {
+//         cnt -= 10;
+//         if(cnt < 10){
+//             clearInterval(t);
+//     },100);
+// }
 
-function makeCardJs(product) {
-    let root = document.createElement("div")};
-    root.id = "container";
-    root.classList.add("container");
-    let imgTag = document.createElement("img");
-    // etc...
-}
+// function makeCardJs(product) {
+//     let root = document.createElement("div")};
+//     root.id = "container";
+//     root.classList.add("container");
+//     let imgTag = document.createElement("img");
+//     // etc...
+// }
 
-fetch('https://dummyjson.com/products?limit=150')
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        let products = data.products;
-        // products.forEach(function(product) {
-        products.getElementById('item-count').textContent = `Number of results : $(products.length1)`
-        let container = document.getElementById('container');
-        var itemString = "";
-        products.forEach(function (product) {
-            itemString = `
-<div id="product-${product.id}" class="product-card">
-    <img class="item-img" src="" alt="">
-    <p class="item-title">${product.title}</p>
-    <p class="item-price">${product.price}</p>
-</div>
-           `
-        });
-        container.innerHTML = itemString;
-        [...document.getElementsByClassName("product-card")]
-            .forEach(e => {
-                e.addEventListener('click', (e) => {
-                    fadeout();
-               })
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("container");
+    const itemCount = document.getElementById("item-count");
+
+    fetch("https://dummyjson.com/products?limit=50")
+        .then((res) => res.json())
+        .then((data) => {
+            let products = data.products;
+            itemCount.textContent = `Number of results: ${products.length}`;
+
+            products.forEach((product) => {
+                const card = document.createElement("div");
+                card.className = "product-card";
+
+                const img = document.createElement("img");
+                img.className = "item-img";
+                img.src = product.thumbnail;
+                img.alt = product.title;
+
+                const title = document.createElement("p");
+                title.className = "item-title";
+                title.textContent = product.title;
+
+                const price = document.createElement("p");
+                price.className = "item-price";
+                price.textContent = `$${product.price}`;
+
+                card.appendChild(img);
+                card.appendChild(title);
+                card.appendChild(price);
+                container.appendChild(card);
+
+                card.addEventListener("click", () => {
+                    card.style.transition = "opacity 0.8s";
+                    card.style.opacity = "0";
+                    setTimeout(() => {
+                        card.remove();
+                        const currentCount = parseInt(itemCount.textContent.match(/\d+/)[0], 10);
+                        itemCount.textContent = `Number of results: ${currentCount - 1}`;
+                    }, 800);
+                });
             });
-    })
-    .catch(function(error) {
-        console.log(error);
-    })
+        });
+});
+
 // document.addEventListener("DOMContentLoaded", function() {});
 
 // window.location.reload(); // refresh the tab to the current value
