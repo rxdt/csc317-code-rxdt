@@ -14,7 +14,7 @@ app.engine(
   "hbs",
   handlebars({
     layoutsDir: path.join(__dirname, "views/layouts"), //where to look for layouts
-    partialsDir: path.join(__dirname, "views/partials"), // where to look for partials
+    partialsDir: path.join(__dirname, "views/layouts/partials"), // where to look for partials
     extname: ".hbs", //expected file extension for handlebars files
     defaultLayout: "layout", //default layout for app, general template for all pages in app
     helpers: {}, //adding new helpers to handlebars for extra functionality

@@ -6,17 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'CSC 317 App', name:"Roxana del Toro" });
 });
 
-module.exports = router;
-
-var express = require('express')
-var router = express.Router();
-
-router.get('/', function (req, res, next) {
-  res.send('Hello World!');
-})
+router.get('/index', function(req, res, next) {
+  res.render('index', { title: 'Index' });
+});
 
 router.get('/login', function (req, res, next) {
-  res.render('index', {title: 'CSC 317 App'});
+  res.render('login', {title: 'Login', css: 'formstyles.css'});
 })
 
 router.get('/register', function (req, res, next) {
@@ -24,9 +19,11 @@ router.get('/register', function (req, res, next) {
 })
 
 router.get('/post', function (req, res, next) {
-  res.render('post', {title: 'Post video'});
+  res.render('postvideo', {title: 'Post video'});
 })
 
 router.get('/viewpost', function (req, res, next) {
   res.render('vewe', {title: 'View post'});
 })
+
+module.exports = router;
