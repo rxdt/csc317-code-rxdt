@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-body * {
-    padding: 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-.main-content {
-
-}
-
-.d1 { /* class selector */
-    background-color: red;
-=======
 .sub-heading {
     all: unset;
     display: block;
@@ -68,5 +55,4 @@ body * {
 .comments h3 {
     font-size: 1.1rem;
     margin-bottom: 0.5em;
->>>>>>> main
 }

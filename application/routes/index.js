@@ -19,7 +19,7 @@ router.get('/post', function (req, res, next) {
 })
 
 router.get('/viewpost', function (req, res, next) {
-  res.render('viewpost', {title: 'View post'});
+  res.render('viewpost', {title: 'View post', css: 'viewpost.css'});
 })
 
 module.exports = router;
