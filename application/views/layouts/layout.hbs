@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="/public/css/index.css" />
     <script defer src="/public/js/mywebsite.js"></script>
     <link rel="stylesheet" href="/public/css/fonts.css" />
+    {{#if css}}
+        <link rel="stylesheet" href="/public/css/{{css}}">
+    {{/if}}
 </head>
 <body>
     {{> header}}

@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', function (req, res, next) {
-  res.render('login', {title: 'Login', css: 'formstyles.css'});
+  res.render('login', {title: 'Login', css: 'login.css'});
 })
 
 router.get('/register', function (req, res, next) {
