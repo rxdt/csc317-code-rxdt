@@ -7,11 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', function (req, res, next) {
-  res.render('login', {title: 'Login', css: 'login.css'});
+  res.render('login', {title: 'Login', css: 'login.css', js: 'registration.js'});
 })
 
 router.get('/register', function (req, res, next) {
-  res.render('register', {title: 'Register'});
+  res.render('register', {title: 'Register', css: 'registration.css', js: 'registration.js'});
 })
 
 router.get('/post', function (req, res, next) {

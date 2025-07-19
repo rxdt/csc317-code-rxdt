@@ -15,5 +15,8 @@
     {{> nav}}
     {{{body}}}
     {{> footer}}
+    {{#if js}}
+        <script defer src="/public/js/{{js}}"></script>
+    {{/if}}
 </body>
 </html>

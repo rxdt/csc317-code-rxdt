@@ -1,3 +1,4 @@
+console.log("registration.js loaded");
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
     const username = document.getElementById("username");
