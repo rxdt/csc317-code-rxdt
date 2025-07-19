@@ -15,7 +15,7 @@ router.get('/register', function (req, res, next) {
 })
 
 router.get('/post', function (req, res, next) {
-  res.render('postvideo', {title: 'Post video'});
+  res.render('postvideo', {title: 'Post video', css: 'postvideo.css'});
 })
 
 router.get('/viewpost', function (req, res, next) {
