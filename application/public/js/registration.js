@@ -33,21 +33,22 @@ document.addEventListener("DOMContentLoaded", function () {
             password.classList.remove("invalid");
         }
 
-        if (password.value !== confirmPassword.value) {
-            confirmPassword.classList.add("invalid");
-            confirmPassword.classList.remove("valid");
-            errors.push("Passwords do not match.");
-        } else {
-            confirmPassword.classList.add("invalid");
-            confirmPassword.classList.remove("valid");
+        if (confirmPassword) {
+            if (password.value !== confirmPassword.value) {
+                confirmPassword.classList.add("invalid");
+                confirmPassword.classList.remove("valid");
+                errors.push("Passwords do not match.");
+            } else {
+                confirmPassword.classList.add("valid");
+                confirmPassword.classList.remove("invalid");
+            }
         }
 
-        if (errors.length === 0) {
-            alert("Registration successful");
-        }
-        else if (errors.length > 0) {
+        if (errors.length > 0) {
             e.preventDefault();
             alert(errors.join("\n"));
+        } else if (confirmPassword) {
+            alert("Registration successful");
         }
     });
 });
