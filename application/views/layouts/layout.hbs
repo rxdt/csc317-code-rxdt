@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{{title}}</title>
     <link rel="icon" href="/public/favicon.ico" sizes="70x70" type="image/ico">
-    <link rel='stylesheet' href='/public/css/style.css' />
-  </head>
-  <body>
+    <link rel="stylesheet" type="text/css" href="/public/css/index.css" />
+    <script defer src="/public/js/mywebsite.js"></script>
+    <link rel="stylesheet" href="/public/css/fonts.css" />
+</head>
+<body>
+    {{> header}}
+    {{> nav}}
     {{{body}}}
-  </body>
+    {{> footer}}
+</body>
 </html>

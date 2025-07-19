@@ -6,10 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'CSC 317 App', name:"Roxana del Toro" });
 });
 
-router.get('/index', function(req, res, next) {
-  res.render('index', { title: 'Index' });
-});
-
 router.get('/login', function (req, res, next) {
   res.render('login', {title: 'Login', css: 'formstyles.css'});
 })
@@ -23,7 +19,7 @@ router.get('/post', function (req, res, next) {
 })
 
 router.get('/viewpost', function (req, res, next) {
-  res.render('vewe', {title: 'View post'});
+  res.render('viewpost', {title: 'View post'});
 })
 
 module.exports = router;
