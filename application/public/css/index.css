@@ -111,7 +111,8 @@ footer {
     }
 }
 
-main h2 {
+/*main h2 {*/
+.sub-heading {
     text-align: center;
     font-family: 'Merriweather', serif;
     font-size: 1.5rem;
